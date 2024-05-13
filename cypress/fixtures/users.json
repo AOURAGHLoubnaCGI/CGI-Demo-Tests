@@ -1,0 +1,15 @@
+{
+    "admin": {
+      "email": "administrator@localhost.com",
+      "password": "administrator"
+    },
+    "client": {
+      "email": "client@localhost.com",
+      "password": "client"
+    },
+    "developer": {
+      "email": "developer@localhost.com",
+      "password": "developer"
+    }
+}
+  
