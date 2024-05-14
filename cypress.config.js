@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: 'eo1v5q',
+  projectId: "eo1v5q",
   // Configure the reporter for generating reports
   reporter: 'cypress-mochawesome-reporter',
   //projectId: "f2n1bu",
