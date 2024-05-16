@@ -1,6 +1,6 @@
 name: End-to-end tests
 on: [push]
-jobs:
+jobs: 
   cypress-run:
     runs-on: ubuntu-22.04
     steps:
