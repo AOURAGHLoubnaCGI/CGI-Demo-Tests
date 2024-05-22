@@ -6,6 +6,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   //projectId: "f2n1bu",
   e2e: {
+    baseUrl: 'http://localhost/CGI-Demo',
     setupNodeEvents(on, config) {
       // Setup for the cypress-mochawesome-reporter
       require('cypress-mochawesome-reporter/plugin')(on);
