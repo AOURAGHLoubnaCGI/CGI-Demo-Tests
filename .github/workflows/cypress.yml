@@ -15,6 +15,10 @@ jobs:
         uses: cypress-io/github-action@v6
         # name: Run Cypress tests
         # run: npx cypress open
+        name: Wait for server to be ready
+        uses: jakejarvis/wait-action@v1
+        with:
+          url: 'http://localhost/CGI-Demo/'
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
