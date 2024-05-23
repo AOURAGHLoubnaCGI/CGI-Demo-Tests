@@ -27,7 +27,7 @@
 Cypress.Commands.add("loginByRole", (role) => {
     cy.fixture('users').then((users) => {
         const user = users[role];
-        cy.visit('http://localhost/CGI-Demo/login');
+        cy.visit('https://cgi-demo.000webhostapp.com/login');
         cy.get("input[placeholder='Email']").type(user.email);
         cy.get("input[placeholder='Password']").type(user.password);
     });
@@ -50,7 +50,7 @@ Cypress.Commands.add('submitLoginForm', () => {
 Cypress.Commands.add('navigateToProjects', () => {
     cy.loginByRole('admin');
     cy.submitLoginForm();
-    cy.get("a[href$='/CGI-Demo/index.php/projects'] > i.fa.fa-sitemap").click();
+    cy.get("a[href$='/index.php/projects'] > i.fa.fa-sitemap").click();
 });
 
 Cypress.Commands.add('fillDateFields', () => {
@@ -82,12 +82,12 @@ Cypress.Commands.add('navigateToTab', (tabId) => {
 Cypress.Commands.add('logout', () => {
     cy.get('.fa.fa-angle-down').click()
     //cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
-    cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
+    cy.get("a[href='/index.php/login/logoff']").click()
 })
 
 Cypress.Commands.add('navigateToTasks', () => {
     cy.loginByRole('admin');
     cy.submitLoginForm();
-    cy.get("a[href$='/CGI-Demo/index.php/tasks'] > i.fa.fa-tasks ").click(); 
+    cy.get("a[href$='/index.php/tasks'] > i.fa.fa-tasks ").click(); 
 });
 
