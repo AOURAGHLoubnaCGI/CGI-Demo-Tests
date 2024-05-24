@@ -80,7 +80,7 @@ Cypress.Commands.add('navigateToTab', (tabId) => {
 });
 
 Cypress.Commands.add('logout', () => {
-    cy.get('.fa.fa-angle-down').click()
+    cy.get('.dropdown-toggle').click()
     //cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
     cy.get("a[href='/index.php/login/logoff']").click()
 })
