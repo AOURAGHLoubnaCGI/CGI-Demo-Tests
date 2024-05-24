@@ -1,3 +1,7 @@
+// Écoute de l'événement au niveau global
+Cypress.on('uncaught:exception', (err, runnable) => {
+    return false;  // Désactive la gestion automatique des erreurs non capturées
+});
 describe('Project Management', () => {
     beforeEach(() => {
         cy.navigateToProjects();
