@@ -5,7 +5,8 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Login Page', () => {
     beforeEach(() => {
-        cy.visit('https://cgi-demo-test.000webhostapp.com/CGI-Demo');
+        cy.visit('https://cgi-demo-test.000webhostapp.com/CGI-Demo/');
+        
     });
 
     it("Login using empty email", () => {
