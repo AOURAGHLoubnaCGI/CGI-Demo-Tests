@@ -3,7 +3,7 @@ describe('Project Management', () => {
         cy.navigateToProjects();
     });
 
-    afterEach(() => {
+     afterEach(() => {
         cy.logout();
     })
 

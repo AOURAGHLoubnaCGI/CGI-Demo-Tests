@@ -27,7 +27,7 @@
 Cypress.Commands.add("loginByRole", (role) => {
     cy.fixture('users').then((users) => {
         const user = users[role];
-        cy.visit('https://cgi-demo.000webhostapp.com/login');
+        cy.visit('https://cgi-demo.000webhostapp.com/');
         cy.get("input[placeholder='Email']").type(user.email);
         cy.get("input[placeholder='Password']").type(user.password);
     });
@@ -80,8 +80,8 @@ Cypress.Commands.add('navigateToTab', (tabId) => {
 });
 
 Cypress.Commands.add('logout', () => {
-    cy.get('.dropdown-toggle').click()
-    //cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
+    cy.get('.fa.fa-angle-down').should('be.visible').click()
+    //cy.get("a[href='/index.php/login/logoff']").click()
     cy.get("a[href='/index.php/login/logoff']").click()
 })
 
