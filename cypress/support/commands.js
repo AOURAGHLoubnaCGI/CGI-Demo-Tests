@@ -50,7 +50,7 @@ Cypress.Commands.add('submitLoginForm', () => {
 Cypress.Commands.add('navigateToProjects', () => {
     cy.loginByRole('admin');
     cy.submitLoginForm();
-    cy.get("a[href='/CGI-Demo/index.php/login/logoff'] > i.fa.fa-sitemap").click();
+    cy.get("a[href$='/CGI-Demo/index.php/projects'] > i.fa.fa-sitemap").click();
 });
 
 Cypress.Commands.add('fillDateFields', () => {
@@ -80,9 +80,11 @@ Cypress.Commands.add('navigateToTab', (tabId) => {
 });
 
 Cypress.Commands.add('logout', () => {
-    cy.get('.fa.fa-angle-down').should('be.visible').click()
+    cy.get('.dropdown-toggle').click()
+    //cy.get('.fa.fa-angle-down').should('be.visible').click()
     //cy.get("a[href='/index.php/login/logoff']").click()
     cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
+    
 })
 
 Cypress.Commands.add('navigateToTasks', () => {

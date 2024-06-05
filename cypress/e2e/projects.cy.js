@@ -7,11 +7,11 @@ describe('Project Management', () => {
         cy.navigateToProjects();
     });
 
-     afterEach(() => {
-        cy.logout();
-    })
+    //  afterEach(() => {
+    //     cy.logout();
+    // })
 
-    it('Required fields Empty', () => {
+    it('Add project - required fields Empty', () => {
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // Section Générale
         cy.get('#projects_projects_types_id').select('Internal');
@@ -42,7 +42,7 @@ describe('Project Management', () => {
         cy.get('.modal-footer > .btn-default').click();
     });
 
-    it('All fields empty except the required field', () => {
+    it('Add project - All fields empty except required field', () => {
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // Fill only the required field
         cy.get('#projects_name').type('02 project');
@@ -64,7 +64,7 @@ describe('Project Management', () => {
         cy.get("button[type='submit']").click();
     });
 
-    it('Fields Filled Correctly', () => {
+    it('Add project - All Fields Filled Correctly', () => {
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // General Section - change here to fill the field instead of clearing it
         cy.get('#projects_projects_types_id').select('Internal');
@@ -105,6 +105,4 @@ describe('Project Management', () => {
         }).click();
         //cy.get('.sub-menu > .active > a').click
     });
-
-
 });
