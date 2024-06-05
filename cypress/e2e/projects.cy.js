@@ -3,15 +3,16 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false;  // Désactive la gestion automatique des erreurs non capturées
 });
 describe('Project Management', () => {
-    beforeEach(() => {
-        cy.navigateToProjects();
-    });
+    // beforeEach(() => {
+    //     cy.navigateToProjects();
+    // });
 
     //  afterEach(() => {
     //     cy.logout();
     // })
 
     it('Add project - required fields Empty', () => {
+        cy.navigateToProjects();
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // Section Générale
         cy.get('#projects_projects_types_id').select('Internal');
@@ -43,6 +44,7 @@ describe('Project Management', () => {
     });
 
     it('Add project - All fields empty except required field', () => {
+        cy.navigateToProjects();
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // Fill only the required field
         cy.get('#projects_name').type('02 project');
@@ -65,6 +67,7 @@ describe('Project Management', () => {
     });
 
     it('Add project - All Fields Filled Correctly', () => {
+        cy.navigateToProjects();
         cy.get('li.open > .sub-menu > :nth-child(2) > .cursor-pointer').click();
         // General Section - change here to fill the field instead of clearing it
         cy.get('#projects_projects_types_id').select('Internal');
@@ -90,6 +93,7 @@ describe('Project Management', () => {
     });
 
     it('Modify project', () => {
+        cy.navigateToProjects();
         cy.get("li[class='open'] li:nth-child(1) a:nth-child(1)").click();
         cy.get(':nth-child(1) > :nth-child(2) > [href="#"] > .fa').click();
         cy.get('#projects_name').clear().type('Project name Modified');
@@ -97,6 +101,7 @@ describe('Project Management', () => {
     });
 
     it('Delete project', () => {
+        cy.navigateToProjects();
         cy.get("li[class='open'] li:nth-child(1) a:nth-child(1)").click();
         cy.get('a').filter((index, element) => {
             // Vérifie que le texte de l'élément correspond et que l'attribut href contient un chemin spécifique
