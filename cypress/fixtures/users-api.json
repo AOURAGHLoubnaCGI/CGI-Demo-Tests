@@ -1,11 +1,7 @@
 {
-    "id": "REPLACE_ID",
     "users_group_id": "1",
     "name": "REPLACE_NAME",
-    "photo": "",
     "email": "REPLACE_EMAIL",
-    "culture": "en",
     "password": "$P$EvIPm.NY45EsJPkK..FPA6.FPkqiK40",
-    "active": "1",
-    "skin": null
+    "active": "1"
 }

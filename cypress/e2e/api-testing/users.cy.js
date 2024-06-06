@@ -23,24 +23,21 @@ describe('User API Tests', () => {
         });
     });
     it(" Add Invalid user", () => {
-        // Read the user fixture
 
             cy.request({
                 method: 'POST',
                 url: getUsersUrl,
                 body: { "name": "Loubna"},
-                failOnStatusCode: false // prevent Cypress from failing the test on a non-2xx status code
+                failOnStatusCode: false // prevent Cypress from failing the test
             }).then(({ status, body }) => {
-                // Verify the response status and body
-                expect(status).to.eq(400);
+                expect(status).to.eq(400); //bad request
                 expect(body.message).to.eq("Invalid input");
-                
             });
     });
     it("Add a user successfully", () => {
         // Read the user fixture
         cy.fixture('users-api').then((data) => {
-            // dynamic values
+
             data.name = Math.random().toString(36).substring(2); // random string
             data.email = Math.random().toString(36).substring(2) + "@localhost.com"; //random email
 
