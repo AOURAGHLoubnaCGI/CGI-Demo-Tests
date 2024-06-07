@@ -12,19 +12,19 @@ jobs:
     # Environnement d'exécution : la dernière version d'Ubuntu
     runs-on: ubuntu-latest
     steps:
-      # Étape1 : Vérification du code source
+      # Étape 1 : Vérification du code source
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Étape2 : Exécution des tests Cypress
+      # Étape 2 : Exécution des tests Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v6
 
         with:
           record: true # Enregistrement des résultats de l'exécution des tests
 
-
-        env: # Variables d'environnement nécessaires pour Cypress
+        # Variables d'environnement nécessaires pour Cypress
+        env: 
           # Clé d'enregistrement Cypress, récupérée des secrets GitHub 
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
