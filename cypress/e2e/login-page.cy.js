@@ -5,7 +5,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 describe('Login Page', () => {
     beforeEach(() => {
-        cy.visit('https://cgi-demo-test.000webhostapp.com/CGI-Demo/');
+        cy.visit('https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/');
         
     });
 

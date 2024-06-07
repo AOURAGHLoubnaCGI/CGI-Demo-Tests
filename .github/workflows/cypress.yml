@@ -23,6 +23,7 @@ jobs:
         with:
           record: true # Enregistrement des résultats de l'exécution des tests
 
+
         env: # Variables d'environnement nécessaires pour Cypress
           # Clé d'enregistrement Cypress, récupérée des secrets GitHub
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
