@@ -1,5 +1,5 @@
 describe('User API Tests', () => {
-    const getUsersUrl = 'https://cgi-demo-test.000webhostapp.com/CGI-Demo/api/users/index.php';
+    const getUsersUrl = 'https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/api/users/index.php';
     let userIdToDelete, numberOfUsers;
 
     it('List of users', () => {
@@ -70,7 +70,7 @@ describe('User API Tests', () => {
         // Send GET request to delete the user
         cy.request({
             method: 'GET',
-            url: `https://cgi-demo-test.000webhostapp.com/CGI-Demo/api/users/delete-user.php?id=A1`,
+            url: `https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/api/users/delete-user.php?id=A1`,
             failOnStatusCode: false // prevent Cypress from failing the test on a non-2xx status code
         }).then((response) => {
             // Verify the response status and message
@@ -87,7 +87,7 @@ describe('User API Tests', () => {
         // Send GET request to delete the user
         cy.request({
             method: 'GET',
-            url: `https://cgi-demo-test.000webhostapp.com/CGI-Demo/api/users/delete-user.php?id=500`,
+            url: `https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/api/users/delete-user.php?id=500`,
             failOnStatusCode: false // prevent Cypress from failing the test on a non-2xx status code
         }).then((response) => {
             // Verify the response status and message
@@ -104,7 +104,7 @@ describe('User API Tests', () => {
         // Send GET request to delete the user
         cy.request({
             method: 'GET',
-            url: `https://cgi-demo-test.000webhostapp.com/CGI-Demo/api/users/delete-user.php?id=${userIdToDelete}`,
+            url: `https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/api/users/delete-user.php?id=${userIdToDelete}`,
         }).then((response) => {
             // Verify the response status and message
             expect(response.status).to.eq(200);

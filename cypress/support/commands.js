@@ -27,7 +27,7 @@
 Cypress.Commands.add("loginByRole", (role) => {
     cy.fixture('users').then((users) => {
         const user = users[role];
-        cy.visit('https://cgi-demo-test.000webhostapp.com/CGI-Demo/');
+        cy.visit('https://cgi-demo-testt.000webhostapp.com/CGI-Demo/CGI-Demo/');
         cy.get("input[placeholder='Email']").type(user.email);
         cy.get("input[placeholder='Password']").type(user.password);
     });
@@ -83,13 +83,13 @@ Cypress.Commands.add('logout', () => {
     cy.get('.dropdown-toggle').click()
     //cy.get('.fa.fa-angle-down').should('be.visible').click()
     //cy.get("a[href='/index.php/login/logoff']").click()
-    cy.get("a[href='/CGI-Demo/index.php/login/logoff']").click()
+    cy.get("a[href='CGI-Demo/CGI-Demo/index.php/login/logoff']").click()
     
 })
 
 Cypress.Commands.add('navigateToTasks', () => {
     cy.loginByRole('admin');
     cy.submitLoginForm();
-    cy.get("a[href$='/CGI-Demo/index.php/tasks'] > i.fa.fa-tasks ").click(); 
+    cy.get("a[href$='CGI-Demo/CGI-Demo/index.php/tasks'] > i.fa.fa-tasks ").click(); 
 });
 
