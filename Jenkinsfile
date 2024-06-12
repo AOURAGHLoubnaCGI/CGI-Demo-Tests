@@ -25,7 +25,7 @@ pipeline {
         stage('Setup Node.js') {
             steps {
                 // Setup Node.js
-                tool name: 'NodeJS 18', type: 'NodeJS'
+                tool name: 'NodeJS', type: 'NodeJS'
             }
         }
 
