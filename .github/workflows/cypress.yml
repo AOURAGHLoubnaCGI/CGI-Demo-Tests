@@ -1,11 +1,8 @@
-name: Cypress Tests
+name: Run Cypress Tests
 
 on:
-  pull_request:
-    # Types de pull request qui déclenchent l'action
-    types: [opened, synchronize, reopened]
-    branches:
-      - main
+  repository_dispatch:
+    types: [run-cypress-tests]
 
 jobs:
   cypress-run:
