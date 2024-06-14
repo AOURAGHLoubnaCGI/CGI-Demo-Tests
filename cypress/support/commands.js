@@ -48,7 +48,7 @@ Cypress.Commands.add('submitLoginForm', () => {
 });
 
 Cypress.Commands.add('navigateToProjects', () => {
-    cy.loginByRole('admin');
+    cy.loginByRole('manager');
     cy.submitLoginForm();
     cy.get("a[href$='/CGI-Demo/index.php/projects'] > i.fa.fa-sitemap").click();
 });
@@ -88,7 +88,7 @@ Cypress.Commands.add('logout', () => {
 })
 
 Cypress.Commands.add('navigateToTasks', () => {
-    cy.loginByRole('admin');
+    cy.loginByRole('manager');
     cy.submitLoginForm();
     cy.get("a[href$='CGI-Demo/CGI-Demo/index.php/tasks'] > i.fa.fa-tasks ").click(); 
 });
