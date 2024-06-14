@@ -23,7 +23,7 @@ describe('Login Page', () => {
         cy.get("label[for='login[password]']").should('have.text', 'Password is required!');
     });
 
-    ['client', 'developer', 'admin'].forEach((role) => {
+    ['client', 'member', 'manager'].forEach((role) => {
         it(`Login using wrong Email for ${role}`, function() {
             cy.loginByRole(role);
             cy.get("input[placeholder='Email']").clear().type('wrongEmail@localhost.com');

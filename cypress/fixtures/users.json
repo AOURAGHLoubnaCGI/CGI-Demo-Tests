@@ -1,6 +1,6 @@
 {
     "admin": {
-      "email": "admin@localhost.com",
+      "email": "manager@localhost.com",
       "password": "admin"
     },
     "client": {
@@ -8,7 +8,7 @@
       "password": "client"
     },
     "developer": {
-      "email": "developer@localhost.com",
+      "email": "member@localhost.com",
       "password": "developer"
     }
 }
