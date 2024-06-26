@@ -13,7 +13,7 @@ describe('Login Page', () => {
         cy.get("input[placeholder='Email']").clear();
         cy.get("input[placeholder='Password']").type('somepassword');
         cy.submitLoginForm();
-        cy.get("label[for='login[email]']").should('have.text', 'Email required!');
+        cy.get("label[for='login[email]']").should('have.text', 'Email is required!');
     });
 
     it("Login using empty password", () => {
