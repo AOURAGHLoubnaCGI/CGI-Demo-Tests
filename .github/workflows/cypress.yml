@@ -1,5 +1,4 @@
 name: Run Cypress Tests
-
 on:
   repository_dispatch:
     types: [run-cypress-tests]
@@ -16,7 +15,6 @@ jobs:
       # Étape 2 : Exécution des tests Cypress
       - name: Cypress run
         uses: cypress-io/github-action@v6
-
         with:
           record: true # Enregistrement des résultats de l'exécution des tests
 
